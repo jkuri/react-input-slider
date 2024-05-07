@@ -5,22 +5,22 @@ import { getClientPosition } from './utils';
 import defaultStyles from './styles';
 
 const Slider = ({
-  disabled,
-  axis,
-  x,
-  y,
-  xmin,
-  xmax,
-  ymin,
-  ymax,
-  xstep,
-  ystep,
+  disabled = false,
+  axis = 'x',
+  x = 50,
+  y = 50,
+  xmin = 0,
+  xmax = 100,
+  ymin = 0,
+  ymax = 100,
+  xstep = 1,
+  ystep = 1,
   onChange,
   onDragStart,
   onDragEnd,
-  xreverse,
-  yreverse,
-  styles: customStyles,
+  xreverse = false,
+  yreverse = false,
+  styles: customStyles = {},
   ...props
 }) => {
   const container = useRef(null);
@@ -218,22 +218,6 @@ const Slider = ({
       </div>
     </div>
   );
-};
-
-Slider.defaultProps = {
-  disabled: false,
-  axis: 'x',
-  x: 50,
-  xmin: 0,
-  xmax: 100,
-  y: 50,
-  ymin: 0,
-  ymax: 100,
-  xstep: 1,
-  ystep: 1,
-  xreverse: false,
-  yreverse: false,
-  styles: {}
 };
 
 export default Slider;
